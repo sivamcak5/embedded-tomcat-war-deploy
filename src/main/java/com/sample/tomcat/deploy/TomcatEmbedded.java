@@ -16,8 +16,8 @@ public class TomcatEmbedded extends TomcatEmbeddedServletContainer{
 
 	public static void start(String contextPath, String warLocation){
 		Tomcat tomcat = new Tomcat();
-		tomcat.setPort(8989);;
-		tomcat.addContext("",  new File("I:/temp").getAbsolutePath());
+		tomcat.setPort(8989);
+		//tomcat.addContext(contextPath,  new File(warLocation).getAbsolutePath());
 		new File(tomcat.getServer().getCatalinaBase(), "webapps").mkdirs();
 		try {
 			tomcat.addWebapp(contextPath, warLocation);
